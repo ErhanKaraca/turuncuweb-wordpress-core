@@ -3,7 +3,7 @@ name: Release Workflow
 on:
   push:
     branches:
-      - main  # Sadece 'release' dalına push edildiğinde çalışır
+      - release  # Sadece 'release' dalına push edildiğinde çalışır
 
 jobs:
   create_release:
