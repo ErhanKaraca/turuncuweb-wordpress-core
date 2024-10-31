@@ -1,8 +1,24 @@
 {
-    "version": "1.0.0",
-    "download_url": "https://raw.githubusercontent.com/ErhanKaraca/turuncuweb-wordpress-core/refs/heads/main/.github/artifacts/release.zip",
-    "requires": "5.0",
-    "tested": "6.3",
-    "requires_php": "7.2",
-    "last_updated": "2024-10-31"
+    "name": "TuruncuWeb Wordpress Core",
+    "slug": "turuncuweb-core",
+    "author": "<a href='https://turuncuweb.net'>Turuncu Internet Solutions</a>",
+    "author_profile": "https://profiles.wordpress.org/turuncuweb",
+    "donate_link": "https://github.com/sponsors/turuncuweb",
+    "version": "1.0.1",
+    "download_url": "https://github.com/ErhanKaraca/turuncuweb-wordpress-core/releases/download/v20241031140645/release_20241031140645.zip",
+    "requires": "5.6",
+    "tested": "6.2",
+    "requires_php": "5.6",
+    "added": "2020-09-10 02:10:00",
+    "last_updated": "2023-03-18 10:07:00",
+    "homepage": "https://turuncuweb.net",
+    "sections": {
+        "description": "Wordpress Core Modifications by Turuncu Internet Solutions",
+        "installation": "Click the activate button and that's it.",
+        "changelog": "Change logs are empty."
+    },
+    "banners": {
+        "low": "https://raw.githubusercontent.com/ErhanKaraca/turuncuweb-wordpress-core/refs/heads/main/.github/artifacts/banner-772x250.webp",
+        "high": "https://raw.githubusercontent.com/ErhanKaraca/turuncuweb-wordpress-core/refs/heads/main/.github/artifacts/banner-1544x500.webp"
+    }
 }
