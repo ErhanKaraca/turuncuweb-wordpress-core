@@ -22,6 +22,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Generate release tag
+        id: generate_release_tag
+        uses: amitsingh-007/next-release-tag@v6.0.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: 'v'
+          tag_template: 'yyyy.mm.dd.i'
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
       # Zip the plug-in
@@ -35,7 +42,8 @@ jobs:
       - name: Upload Release
         uses: ncipollo/release-action@v1.14.0
         with:
-          tag: "v.${GITHUB_RUN_ID}.${GITHUB_RUN_NUMBER}"
+          name: Release ${{ steps.generate_release_tag.outputs.next_release_tag }}
+          tag: ${{ steps.generate_release_tag.outputs.next_release_tag }}
           artifacts: ".github/artifacts/release.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           commit: true
