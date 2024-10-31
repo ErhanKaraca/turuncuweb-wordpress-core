@@ -26,13 +26,12 @@ jobs:
       # 3. ZIP dosyasını release olarak yükle
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v1.1.0
         with:
           tag_name: "v$VERSION"
           release_name: "Release $VERSION"
           draft: false
           prerelease: false
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       # 4. ZIP dosyasını release'e ekle
       - name: Upload Release Asset
