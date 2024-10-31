@@ -1,4 +1,5 @@
 <?php
+
 /**
  * TuruncuWeb Wordpress Core
  *
@@ -44,7 +45,11 @@ require TURUNCUWEB_PATH . 'core/config/disable-comments.php';
 // Elementor Widgets
 require TURUNCUWEB_PATH . 'core/elementor/widgets/init.php';
 
-add_action('wp_enqueue_scripts', function(){
+// Updater
+require TURUNCUWEB_PATH . 'core/updater/updater.php';
+
+
+add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('turuncuweb', TURUNCUWEB_URL . 'assets/css/turuncuweb.css', array(), '1.0.7');
     wp_enqueue_script('turuncuweb', TURUNCUWEB_URL . 'assets/js/turuncuweb.js', ['jquery'], '1.0.3', true);
 });
