@@ -39,6 +39,7 @@ define('TURUNCUWEB_URL', plugin_dir_url(TURUNCUWEB__FILE__));
 // Load Configs
 require TURUNCUWEB_PATH . 'core/config/svg-supports.php';
 require TURUNCUWEB_PATH . 'core/config/page-post-type.php';
+require TURUNCUWEB_PATH . 'core/config/disable-comments.php';
 
 // Elementor Widgets
 require TURUNCUWEB_PATH . 'core/elementor/widgets/init.php';
