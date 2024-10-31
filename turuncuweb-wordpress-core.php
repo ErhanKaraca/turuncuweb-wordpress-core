@@ -23,7 +23,27 @@
  * along with TuruncuWeb Wordpress Core. If not, see <https://www.gnu.org/licenses/gpl-2.0.html/>.
  */
 
-// Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) exit;
+namespace TuruncuWeb;
 
-// Include your custom code here.
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
+
+define('TURUNCUWEB_VERSION', '1.0.0');
+define('TURUNCUWEB__FILE__', __FILE__);
+define('TURUNCUWEB_PLUGIN_BASE', plugin_basename(TURUNCUWEB__FILE__));
+define('TURUNCUWEB_PATH', plugin_dir_path(TURUNCUWEB__FILE__));
+define('TURUNCUWEB_URL', plugin_dir_url(TURUNCUWEB__FILE__));
+
+// Load Configs
+require TURUNCUWEB_PATH . 'core/config/svg-supports.php';
+require TURUNCUWEB_PATH . 'core/config/page-post-type.php';
+
+// Elementor Widgets
+require TURUNCUWEB_PATH . 'core/elementor/widgets/init.php';
+
+add_action('wp_enqueue_scripts', function(){
+    wp_enqueue_style('turuncuweb', TURUNCUWEB_URL . 'assets/css/turuncuweb.css', array(), '1.0.7');
+    wp_enqueue_script('turuncuweb', TURUNCUWEB_URL . 'assets/js/turuncuweb.js', ['jquery'], '1.0.3', true);
+});
